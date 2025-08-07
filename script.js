@@ -5,6 +5,13 @@ const result = document.getElementById('result');
 checkBtn.addEventListener('click', () => {
     const inputValue = textInput.value.trim();
 
+    // New keydown event listener for the Enter key on the input
+textInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const inputValue = textInput.value.trim();
+        // Reuse the same logic as the click event
+    }
+
     // Check if input is empty
     if (!inputValue) {
         alert('Please input a value');
@@ -19,4 +26,5 @@ checkBtn.addEventListener('click', () => {
 
     result.style.display = 'block';
     result.textContent = `${inputValue} is ${isPalindrome(inputValue) ? '' : 'not '}a palindrome`;
+
 })
